@@ -82,7 +82,6 @@ public class MegaMillions {
 
         winningNums = generateNumbers();
         int matches = countMatches(winningNums, userNums);
-        System.out.println(matches + "\nUserNums: " + UserNums.toString() + "\nWinningNums: " + winningNums.toString());
  
  
     }
@@ -121,6 +120,7 @@ public class MegaMillions {
         int[] userList = new int[5];
         int userNum;
         boolean loop;
+        boolean loop2;
         for (int i = 1; i <= 5; i++){
             do { 
                 System.out.println("Input a number between 1-70");
@@ -132,8 +132,18 @@ public class MegaMillions {
                     loop = true;
                 }
             } while (loop);
+
+            
         }
- 
+        do {
+                System.out.print("Input your balls: ");
+                int megaBaller = input.nextInt();
+                if ((megaBaller > 0) && (megaBaller < 26)){
+                    loop2 = false;
+                } else{
+                    loop2 = true;
+                } 
+            }while(loop2);
  
         return userList;
     }
@@ -153,7 +163,7 @@ public class MegaMillions {
     // TODO: Count matching numbers between user and winning numbers
     public static int countMatches(int[] winningNums, int[] userNums){
         int count = 0;
-        for (int i = 0; i < 6; i++){
+        for (int i = 0; i < 5; i++){
             if (contains(winningNums, userNums[i])){
                 count++;
             }
@@ -167,4 +177,7 @@ public class MegaMillions {
  
  
     // TODO: Get a random Megaplier value (2x, 3x, 4x, or 5x)
+    public static megaplier(){
+
+    }
 }
